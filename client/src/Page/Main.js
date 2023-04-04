@@ -7,6 +7,7 @@ const Main = () => {
             <M.Container>
                 <Link to="/signup"><button>Sign up</button></Link>
                 <Link to="/signin"><button>Sign in</button></Link>
+                <Link to="/todo"><button>Todo List</button></Link>
             </M.Container>
         </M.FlexWrapper>
     );
