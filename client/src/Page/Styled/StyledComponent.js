@@ -117,4 +117,7 @@ export const CreateButton = styled.button`
   cursor: pointer;
 `;
 
-
+export const ReadLine = styled.div`
+border-top: 1px slid black;
+width : 30rem;
+`;

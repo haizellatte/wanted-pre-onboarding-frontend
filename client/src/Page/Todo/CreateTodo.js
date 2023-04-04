@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import * as C from "../Styled/StyledComponent";
 import { API } from "../../config";
-import axios from "axios";
 import axiosCall from "../../axiosCall"
 
 const CreateTodo = () => {
@@ -22,13 +21,11 @@ const CreateTodo = () => {
 
     return (
         <C.CreateTodoWrapper>
-            <C.CreateContainer>
                 <C.TodoHead>Todo List</C.TodoHead>
                 <C.TodoListForm onSubmit={handleCreateTodo}>
                     <C.TitleInput data-testid="new-todo-input" onChange={handleInput} />
                     <C.CreateButton data-testid="new-todo-add-button">+</C.CreateButton>
                 </C.TodoListForm>
-            </C.CreateContainer>
         </C.CreateTodoWrapper>
     );
 };
