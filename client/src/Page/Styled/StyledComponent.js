@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "./commons"
 
 export const FlexWrapper = styled.div`
   display: flex;
@@ -63,4 +64,57 @@ export const Form = styled.form`
     height: 5rem;
   }
 `;
+
+export const CreateTodoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const CreateContainer = styled.div`
+  display: flex;
+  background-color: #f9feff5e;
+  width: 50rem;
+  height: 70rem;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const TodoHead = styled.div`
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 0rem 2rem;
+`;
+
+export const TodoListForm = styled.form`
+  display: flex;
+  text-align: center;
+  flex-direction: ro;
+  align-items: center;
+`;
+
+export const TitleInput = styled.input.attrs(props => ({
+  placeholder: 'Todo Title',
+}))`
+  padding : 0rem 1rem;
+  width: 35rem;
+  height: 3rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+`;
+
+
+export const CreateButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 5rem;
+  height: 3rem;
+  font-size: 3rem;
+  background-color: #3366FF;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
 

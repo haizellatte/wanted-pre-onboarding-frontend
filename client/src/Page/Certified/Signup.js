@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate , Link} from "react-router-dom";
 import { API } from "../../config";
 import axios from "axios";
-import * as S from "../StyledComponent";
+import * as S from "../Styled/StyledComponent";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -11,6 +11,7 @@ const Signup = () => {
         email: '',
         password: '',
     })
+    const { email, password } = isSignup;
 
     //input 요소 담기
     const handlInput = (e) => {
@@ -26,9 +27,9 @@ const Signup = () => {
     
     //유효성 검사
     const isInputValid =
-        isSignup.email.includes('@') &&
-        isSignup.email.includes('.') &&
-        isSignup.password.trim().length >= 8;
+        email.includes('@') &&
+        email.includes('.') &&
+        password.trim().length >= 8;
 
 
     //회원가입 버튼
@@ -44,7 +45,7 @@ const Signup = () => {
                     "Content-Type": "application/json",
                 },
                 data: {
-                    email :isSignup.email, password: isSignup.password
+                    email :email, password: password
                 }
             })
                 .then(() => {
@@ -71,10 +72,10 @@ const Signup = () => {
             <S.Container>
                 <S.Form onSubmit={handleSubmit}>
                     <div>SIGN UP</div>
-                    <input data-testid="email-input" type="email" name="email"  value={isSignup.email} placeholder="Your Email" onChange={(e) => {
+                    <input data-testid="email-input" type="email" name="email"  value={email} placeholder="Your Email" onChange={(e) => {
         handlInput(e)
                     }} />
-                    <input data-testid="password-input" type="password" name="password" value={isSignup.password}  placeholder="Your Password" onChange={(e)=> {
+                    <input data-testid="password-input" type="password" name="password" value={password}  placeholder="Your Password" onChange={(e)=> {
                         handlInput(e)
                     }} />
                     <button data-testid="signup-button" disabled={!isInputValid} >Submit</button>

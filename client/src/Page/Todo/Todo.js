@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import * as T from "../StyledComponent";
+import * as T from "../Styled/StyledComponent";
 import CreateTodo from "./CreateTodo";
 import ReadTodo from "./ReadTodo";
 
@@ -17,8 +17,8 @@ const Todo = () => {
 
     return (
         <T.FlexWrapper>
-                <CreateTodo />
-                <ReadTodo />
+            <CreateTodo />
+            <ReadTodo />
         </T.FlexWrapper>
     );
 };
