@@ -16,12 +16,12 @@ const Todo = () => {
     },[])
 
     return (
-        <T.CreateTodoWrapper>
+        <T.FlexWrapper>
             <T.CreateContainer>
                 <CreateTodo />
                 <ReadTodo />
             </T.CreateContainer>
-            </T.CreateTodoWrapper>
+            </T.FlexWrapper>
     );
 };
 

@@ -12,7 +12,7 @@ const CreateTodo = () => {
 
     const handleCreateTodo = async(e) => {
         e.preventDefault();
-        await axiosCall(API.createTodo, "post", {
+        await axiosCall(API.Todo, "post", {
                     todo : todoList
         }).then(res => {
             console.log(res.data)
@@ -20,13 +20,13 @@ const CreateTodo = () => {
     }
 
     return (
-        <C.CreateTodoWrapper>
+        <>
                 <C.TodoHead>Todo List</C.TodoHead>
                 <C.TodoListForm onSubmit={handleCreateTodo}>
-                    <C.TitleInput data-testid="new-todo-input" onChange={handleInput} />
+                    <C.TitleInput placeholder="Todo Title" data-testid="new-todo-input" onChange={handleInput} />
                     <C.CreateButton data-testid="new-todo-add-button">+</C.CreateButton>
                 </C.TodoListForm>
-        </C.CreateTodoWrapper>
+        </>
     );
 };
 

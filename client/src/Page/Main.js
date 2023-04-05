@@ -7,6 +7,8 @@ const Main = () => {
         alert("로그아웃 되었습니다.")
     }
 
+    console.log(localStorage.getItem("accessToken"));
+
     return (
         <M.FlexWrapper>
             <M.Container>
