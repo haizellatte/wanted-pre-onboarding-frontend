@@ -4,7 +4,6 @@ import * as T from "../Styled/StyledComponent";
 import CreateTodo from "./CreateTodo";
 import ReadTodo from "./ReadTodo";
 
-
 const Todo = () => {
     const navigate = useNavigate();
     
@@ -22,7 +21,7 @@ const Todo = () => {
                 <CreateTodo />
                 <ReadTodo />
             </T.CreateContainer>
-                 <Link to="/">
+                <Link to="/">
                 <T.MainButton>Main</T.MainButton>
                 </Link>
             </T.Container2>

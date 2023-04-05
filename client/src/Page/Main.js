@@ -3,8 +3,12 @@ import * as M from "../Page/Styled/StyledComponent";
 
 const Main = () => {
     const handleLogout = () => {
+    if (localStorage.getItem("accessToken")) {
         localStorage.clear();
         alert("로그아웃 되었습니다.")
+    } else {
+        alert("로그아웃 상태입니다.")
+    }
     }
 
     return (

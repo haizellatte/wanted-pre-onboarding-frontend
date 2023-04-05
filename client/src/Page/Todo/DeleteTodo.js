@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { API } from "../../config";
-import axiosCall from "../../axiosCall"
 import axios from "axios";
 import { MdDelete } from 'react-icons/md';
-
 
 const DeleteTodo = ({ id }) => {
 
@@ -26,8 +24,6 @@ const DeleteTodo = ({ id }) => {
             console.log(err);
         });
     }
-
-
 
     return (
         <DeleteButton data-testid="delete-button" 

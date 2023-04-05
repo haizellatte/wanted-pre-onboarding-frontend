@@ -1,6 +1,6 @@
 //! 회원가입 페이이지
 import { useState, useEffect } from 'react';
-import { useNavigate , Link} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import { API } from "../../config";
 import axios from "axios";
 import * as S from "../Styled/StyledComponent";
@@ -28,7 +28,6 @@ const Signup = () => {
     //유효성 검사
     const isInputValid =
         email.includes('@') &&
-        email.includes('.') &&
         password.trim().length >= 8;
 
 
@@ -52,8 +51,8 @@ const Signup = () => {
                 alert("회원가입 되었습니다.");
                 navigate("/signin");
         })
-        .catch((err) => {
-            alert("이메일 또는 비밀번호 형식이 일치하지 않습니다. \n - 이메일 : @, . 포함 \n - 비밀번호 : 8자리 이상");
+        .catch(() => {
+            alert("이메일 또는 비밀번호 형식이 일치하지 않습니다. \n - 이메일 : @ 포함 \n - 비밀번호 : 8자리 이상");
         });
     }
 

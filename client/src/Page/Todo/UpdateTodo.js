@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import * as U from "../Styled/StyledComponent";
 import { API } from "../../config";
 import axiosCall from "../../axiosCall";
@@ -6,7 +6,6 @@ import DeleteTodo from "./DeleteTodo";
 
 const UpdateTodo = ({todolist}) => {
     const { id, todo, isCompleted } = todolist;
-    const inputRef = useRef(null);
     const [updateTodo, setUpdateTodo] = useState({
         id: id,
         todo: todo,
@@ -71,18 +70,17 @@ const UpdateTodo = ({todolist}) => {
                     (<U.DoneTitle>{todo}</U.DoneTitle>) : (
                             <U.UpdateTitle
                                 data-testid="modify-input"
-                                ref={inputRef}
                                 onChange={handleChangeTodo}
-                                defaultValue={updateTodo.todo} />)}
+                                defaultValue={todo} />)}
                     {/* 수정모드라면 -> 제출/취소버튼 활성화 */}
                     {!isModified ? (<U.ModifyingButton
                                     data-testid="modify-button"
                                     onClick={handleChangeModified}
-                                    >edit</U.ModifyingButton>) :
+                                    >수정</U.ModifyingButton>) :
                                 (<div className='editMode'>
                                 <U.ModifyingDoneButton  data-testid="submit-button"
                                     onClick={() => { handleChangeModified(); handleUpdateTodo() }}
-                                    >제출</U.ModifyingDoneButton>
+                                    >완료</U.ModifyingDoneButton>
                                 <U.CancelButton data-testid="cancel-button"
                                     onClick={handleCancel}>취소</U.CancelButton>
                                 </div>)}

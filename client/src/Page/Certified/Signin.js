@@ -5,7 +5,6 @@ import { API } from "../../config";
 import axios from "axios";
 import * as S from "../Styled/StyledComponent";
 
-
 const Signin = () => {
     const navigate = useNavigate();
     const [isSignup, setIsSignup] = useState({
@@ -29,7 +28,6 @@ const Signin = () => {
     //유효성 검사
     const isInputValid =
         email.includes('@') &&
-        email.includes('.') &&
         password.trim().length >= 8;
 
 
@@ -79,7 +77,7 @@ const Signin = () => {
                     }} />
                         <button data-testid="signin-button" disabled={!isInputValid} >Submit</button>
                 </S.Form>
-               <Link to="/">
+                <Link to="/">
                 <S.MainButton>Main</S.MainButton>
                 </Link>
             </S.Container2>
