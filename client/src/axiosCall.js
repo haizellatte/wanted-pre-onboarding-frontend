@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosCall = (url, method, data = null) => {
+const axiosCall = (url, method, data=null) => {
     return axios({
     method,
     url,

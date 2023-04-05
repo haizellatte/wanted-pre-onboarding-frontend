@@ -1,6 +1,6 @@
 //! 로그인 페이지
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { API } from "../../config";
 import axios from "axios";
 import * as S from "../Styled/StyledComponent";
@@ -14,7 +14,7 @@ const Signin = () => {
     })
     const { email, password } = isSignup;
 
-//input 요소 담기
+    //input 요소 담기
     const handlInput = (e) => {
     const { name, value } = e.target;
         {name === "email" ? ( setIsSignup({
@@ -54,12 +54,12 @@ const Signin = () => {
                 alert("로그인되었습니다.");
                 navigate("/todo");
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(() => {
+            alert("이메일 또는 비밀번호가 일치하지 않습니다.");
         });
     }
 
-//토큰이 있다면 -> /todo로 리다이렉트
+    //토큰이 있다면 -> /todo로 리다이렉트
     useEffect(() => {
     if (localStorage.getItem("accessToken")) {
         navigate("/todo");
@@ -68,9 +68,9 @@ const Signin = () => {
 
     return (
         <S.FlexWrapper>
-            <S.Container>
+            <S.Container2>
                 <S.Form onSubmit={handleSubmit}>
-                    <div>SIGN IN</div>
+                    <S.Title>SIGN IN</S.Title>
                         <input data-testid="email-input" type="email" name="email" value={email} placeholder="Your Email" onChange={(e) => {
         handlInput(e)
                     }} />
@@ -79,7 +79,10 @@ const Signin = () => {
                     }} />
                         <button data-testid="signin-button" disabled={!isInputValid} >Submit</button>
                 </S.Form>
-            </S.Container>
+               <Link to="/">
+                <S.MainButton>Main</S.MainButton>
+                </Link>
+            </S.Container2>
         </S.FlexWrapper>
     );
 };

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import * as T from "../Styled/StyledComponent";
 import CreateTodo from "./CreateTodo";
 import ReadTodo from "./ReadTodo";
@@ -17,10 +17,15 @@ const Todo = () => {
 
     return (
         <T.FlexWrapper>
+            <T.Container2>
             <T.CreateContainer>
                 <CreateTodo />
                 <ReadTodo />
             </T.CreateContainer>
+                 <Link to="/">
+                <T.MainButton>Main</T.MainButton>
+                </Link>
+            </T.Container2>
             </T.FlexWrapper>
     );
 };

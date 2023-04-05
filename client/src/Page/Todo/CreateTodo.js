@@ -16,16 +16,17 @@ const CreateTodo = () => {
                     todo : todoList
         }).then(res => {
             console.log(res.data)
+            window.location.reload();
         })
     }
 
     return (
         <>
-                <C.TodoHead>Todo List</C.TodoHead>
-                <C.TodoListForm onSubmit={handleCreateTodo}>
-                    <C.TitleInput placeholder="Todo Title" data-testid="new-todo-input" onChange={handleInput} />
-                    <C.CreateButton data-testid="new-todo-add-button">+</C.CreateButton>
-                </C.TodoListForm>
+            <C.TodoHead>Todo List</C.TodoHead>
+            <C.TodoListForm onSubmit={handleCreateTodo}>
+                <C.TitleInput placeholder="Todo Title" data-testid="new-todo-input" onChange={handleInput} />
+                <C.CreateButton data-testid="new-todo-add-button">+</C.CreateButton>
+            </C.TodoListForm>
         </>
     );
 };

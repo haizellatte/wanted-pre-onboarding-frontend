@@ -53,25 +53,22 @@ const Signup = () => {
                 navigate("/signin");
         })
         .catch((err) => {
-            console.log(err);
+            alert("이메일 또는 비밀번호 형식이 일치하지 않습니다. \n - 이메일 : @, . 포함 \n - 비밀번호 : 8자리 이상");
         });
     }
 
     //토큰이 있다면 -> /todo로 리다이렉트
     useEffect(() => {
- if (localStorage.getItem("accessToken")) {
+    if (localStorage.getItem("accessToken")) {
         navigate("/todo");
     }
     },[])
 
     return (
         <S.FlexWrapper>
-                <Link to="/">
-                    <button>MAIN</button>
-                    </Link>
-            <S.Container>
+            <S.Container2>
                 <S.Form onSubmit={handleSubmit}>
-                    <div>SIGN UP</div>
+                    <S.Title>SIGN UP</S.Title>
                     <input data-testid="email-input" type="email" name="email"  value={email} placeholder="Your Email" onChange={(e) => {
         handlInput(e)
                     }} />
@@ -80,7 +77,10 @@ const Signup = () => {
                     }} />
                     <button data-testid="signup-button" disabled={!isInputValid} >Submit</button>
                 </S.Form>
-            </S.Container>
+                    <Link to="/">
+                <S.MainButton>Main</S.MainButton>
+                </Link>
+            </S.Container2>
         </S.FlexWrapper>
     );
 };
