@@ -14,8 +14,7 @@ const CreateTodo = () => {
         e.preventDefault();
         await axiosCall(API.Todo, "post", {
                     todo : todoList
-        }).then(res => {
-            console.log(res.data)
+        }).then(() => {
             window.location.reload();
         })
     }

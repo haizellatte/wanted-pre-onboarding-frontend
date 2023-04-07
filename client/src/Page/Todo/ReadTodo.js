@@ -13,8 +13,6 @@ const ReadTodo = () => {
         getTodos();
     },[])
     
-    console.log(todos)
-
     return (
         <>
             {todos && todos.map((todolist, idx) => (

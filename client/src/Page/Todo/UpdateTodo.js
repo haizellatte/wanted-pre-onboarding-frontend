@@ -55,7 +55,6 @@ const UpdateTodo = ({todolist}) => {
         });
     }
 
-
     return (
         <div className='todoContent'>
             <li>
